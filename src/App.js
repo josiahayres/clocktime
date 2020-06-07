@@ -36,12 +36,15 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <Digit number={hour} />
-      <Digit number={hour2} />
-
-      <Digit number={minute} />
-      <Digit number={minute2} />
+    <div className="app">
+      <div className="time">
+        <Digit number={hour} />
+        <Digit number={hour2} />
+      </div>
+      <div className="time">
+        <Digit number={minute} />
+        <Digit number={minute2} />
+      </div>
       <span>{`${pkg.name} (${pkg.version})`}</span>
     </div>
   );
