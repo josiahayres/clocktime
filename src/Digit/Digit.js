@@ -8,7 +8,7 @@ import './Digit.css';
  */
 
 function Digit(props) {
-    const { number, size="small" } = props;
+    const { number, size = "tiny" } = props;
     let digit;
     switch (number) {
         case 1:
@@ -116,9 +116,9 @@ function Digit(props) {
 
     return (
         <div className="analog-digit">
-            <Clock staticClock config={digit.topLeft} size={size}/>
-            <Clock staticClock config={digit.topRight} size={size}/>
-            <Clock staticClock config={digit.middleLeft} size={size}/>
+            <Clock staticClock config={digit.topLeft} size={size} />
+            <Clock staticClock config={digit.topRight} size={size} />
+            <Clock staticClock config={digit.middleLeft} size={size} />
             <Clock staticClock config={digit.middleRight} size={size} />
             <Clock staticClock config={digit.bottomLeft} size={size} />
             <Clock staticClock config={digit.bottomRight} size={size} />

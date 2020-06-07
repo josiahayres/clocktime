@@ -1,8 +1,10 @@
 .App {
 	display: grid;
-	grid-template-columns: auto auto auto auto;
+	grid-template-columns: auto auto;
 	align-content: center;
-	width: 880px;
+	width: 100%;
+
+	max-width: 440px;
 	margin: auto;
 }
 .App > span {
@@ -11,4 +13,22 @@
 	right: 0;
 	font-size: 0.8em;
 	padding: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+	/* For tablets: */
+	.App {
+		grid-template-columns: auto auto;
+		width: 100%;
+		max-width: 880px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	/* For desktop: */
+	.App {
+		grid-template-columns: auto auto auto auto;
+		width: 880px;
+		max-width: 880px;
+	}
 }
