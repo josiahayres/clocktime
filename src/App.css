@@ -1,0 +1,7 @@
+.App {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	align-content: center;
+width: 880px;
+margin: auto;
+}

@@ -1,0 +1,126 @@
+// $size: 200;
+
+@mixin square($size, $radius: 100%) {
+	width: $size + px;
+	height: $size + px;
+	border-radius: $radius;
+}
+
+@mixin clockSize($size) {
+	$height: $size * 0.48;
+	$armWidth: ($size * 0.02) + px;
+	$top: $size * 2 + px;
+
+	height: $height + px;
+	width: $armWidth;
+	top: -$height + px;
+}
+
+.clock {
+	display: inline-block;
+	border-radius: 100%;
+	background: #ffffff;
+	font-family: "Montserrat";
+	border: 5px solid white;
+	// box-shadow: inset 1px 3px 6px 0 rgba(0, 0, 0, 0.05);
+	&.tiny {
+		$size: 75;
+		@include square($size);
+		.minute,
+		.hour {
+			@include clockSize($size);
+		}
+	}
+	&.small {
+		$size: 100;
+		@include square($size);
+		.minute,
+		.hour {
+			@include clockSize($size);
+		}
+	}
+	&.regular {
+		$size: 200;
+		@include square($size);
+		.minute,
+		.hour {
+			@include clockSize($size);
+		}
+	}
+	&.large {
+		$size: 300;
+		@include square($size);
+		.minute,
+		.hour {
+			@include clockSize($size);
+		}
+	}
+
+	.wrap {
+		overflow: hidden;
+		position: relative;
+
+		width: 100%;
+		height: 100%;
+		border-radius: 100%;
+		visibility: visible;
+		opacity: 1;
+		transition: opacity 2s linear;
+	}
+
+	.hidden {
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	.minute,
+	.hour {
+		position: absolute;
+		margin: auto;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: black;
+		transform-origin: bottom center;
+		transform: rotate(0deg);
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+		z-index: 1;
+		-webkit-transition: -webkit-transform 0.8s ease-in-out;
+		-ms-transition: -ms-transform 0.8s ease-in-out;
+		transition: transform 0.8s ease-in-out;
+	}
+
+	.second {
+		position: absolute;
+		height: 90px;
+		width: 2px;
+		margin: auto;
+		top: -26%;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		border-radius: 4px;
+		background: #ff4b3e;
+		transform-origin: bottom center;
+		transform: rotate(180deg);
+		z-index: 1;
+	}
+
+	.dot {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 8px;
+		height: 8px;
+		border-radius: 100px;
+		background: #1b1b1b;
+		border: 3px solid #ffffff;
+		border-radius: 100px;
+		margin: auto;
+		z-index: 1;
+
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	}
+}

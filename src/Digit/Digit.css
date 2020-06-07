@@ -1,0 +1,4 @@
+.analog-digit {
+	display: grid;
+	grid-template-columns: auto auto;
+}
