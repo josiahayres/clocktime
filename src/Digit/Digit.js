@@ -8,7 +8,7 @@ import './Digit.css';
  */
 
 function Digit(props) {
-    const { number, size = "tiny" } = props;
+    const { number, size = "small" } = props;
     let digit;
     switch (number) {
         case 1:
