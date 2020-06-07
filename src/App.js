@@ -1,5 +1,6 @@
 import React from 'react';
 import Digit from './Digit/Digit';
+import pkg from '../package.json';
 
 import './App.css';
 
@@ -41,7 +42,7 @@ function App() {
 
       <Digit number={minute} />
       <Digit number={minute2} />
-      <span>Version 0.1</span>
+      <span>{`${pkg.name} (${pkg.version})`}</span>
     </div>
   );
 }
