@@ -20,8 +20,6 @@ function App() {
     const hourStr = (timer).toString().padStart(2, "0");
     const minuteStr = (time.getMinutes().toString().padStart(2, 0));
 
-    console.log(hourStr, minuteStr);
-
     setHour(Number(hourStr[0]));
     setHour2(Number(hourStr[1]));
     setMinute(Number(minuteStr[0]));
