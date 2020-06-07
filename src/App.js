@@ -41,7 +41,7 @@ function App() {
 
       <Digit number={minute} />
       <Digit number={minute2} />
-
+      <span>Version 0.1</span>
     </div>
   );
 }
