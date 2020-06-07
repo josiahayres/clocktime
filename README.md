@@ -1,6 +1,6 @@
 # Clocktime
 
-https://github.com/josiahayres/clocktime
+See the app running [here](https://josiahayres.github.io/clocktime/).
 
 ### Analyzing the Bundle Size
 
