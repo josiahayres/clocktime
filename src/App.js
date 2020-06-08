@@ -15,7 +15,7 @@ function App() {
   React.useEffect(() => {
 
     // 12 hr time
-    const timer = is24hr ? time.getHours() : time.getHours() % 12;
+    const timer = (is24hr || time.getHours() <= 12) ? time.getHours() : time.getHours() % 12;
 
     const hourStr = (timer).toString().padStart(2, "0");
     const minuteStr = (time.getMinutes().toString().padStart(2, 0));
