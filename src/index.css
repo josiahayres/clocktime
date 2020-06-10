@@ -5,10 +5,56 @@ body {
 		"Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: #2d3142;
+	background: linear-gradient(
+		334deg,
+		#45524f,
+		#19295d,
+		#2b5d1c,
+		#85530f,
+		#5a537d,
+		#08302a
+	);
+	background-size: 1200% 1200%;
+	-webkit-animation: AnimationName 59s ease infinite;
+	-moz-animation: AnimationName 59s ease infinite;
+	animation: AnimationName 59s ease infinite;
 }
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
+}
+
+@-webkit-keyframes AnimationName {
+	0% {
+		background-position: 0% 19%;
+	}
+	50% {
+		background-position: 100% 82%;
+	}
+	100% {
+		background-position: 0% 19%;
+	}
+}
+@-moz-keyframes AnimationName {
+	0% {
+		background-position: 0% 19%;
+	}
+	50% {
+		background-position: 100% 82%;
+	}
+	100% {
+		background-position: 0% 19%;
+	}
+}
+@keyframes AnimationName {
+	0% {
+		background-position: 0% 19%;
+	}
+	50% {
+		background-position: 100% 82%;
+	}
+	100% {
+		background-position: 0% 19%;
+	}
 }
