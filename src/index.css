@@ -15,9 +15,9 @@ body {
 		#08302a
 	);
 	background-size: 1200% 1200%;
-	-webkit-animation: AnimationName 59s ease infinite;
-	-moz-animation: AnimationName 59s ease infinite;
-	animation: AnimationName 59s ease infinite;
+	-webkit-animation: FadeBackgroundColour 59s ease infinite;
+	-moz-animation: FadeBackgroundColour 59s ease infinite;
+	animation: FadeBackgroundColour 59s ease infinite;
 }
 
 code {
@@ -25,7 +25,7 @@ code {
 		monospace;
 }
 
-@-webkit-keyframes AnimationName {
+@-webkit-keyframes FadeBackgroundColour {
 	0% {
 		background-position: 0% 19%;
 	}
@@ -36,7 +36,7 @@ code {
 		background-position: 0% 19%;
 	}
 }
-@-moz-keyframes AnimationName {
+@-moz-keyframes FadeBackgroundColour {
 	0% {
 		background-position: 0% 19%;
 	}
@@ -47,7 +47,7 @@ code {
 		background-position: 0% 19%;
 	}
 }
-@keyframes AnimationName {
+@keyframes FadeBackgroundColour {
 	0% {
 		background-position: 0% 19%;
 	}
