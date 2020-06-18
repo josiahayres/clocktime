@@ -23,7 +23,7 @@ $primary: #fff;
 .clock {
 	display: inline-block;
 	border-radius: 100%;
-	background: $background;
+	// background: $background;
 	font-family: "Montserrat";
 	// box-shadow: inset 1px 3px 6px 0 rgba(0, 0, 0, 0.05);
 	&.tiny {
@@ -125,5 +125,24 @@ $primary: #fff;
 		z-index: 1;
 
 		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	}
+}
+
+.divider {
+	font-size: 6em;
+	animation-name: flash;
+	animation-duration: 2000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease;
+}
+@keyframes flash {
+	0% {
+		color: white;
+	}
+	50% {
+		color: transparent;
+	}
+	100% {
+		color: white;
 	}
 }

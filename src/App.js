@@ -39,6 +39,7 @@ function App() {
         <Digit number={hour} />
         <Digit number={hour2} />
       </div>
+      <div className="divider">:</div>
       <div className="time">
         <Digit number={minute} />
         <Digit number={minute2} />
