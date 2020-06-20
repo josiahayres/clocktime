@@ -1,17 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Node.js CI
+name: Github Pages Auto Deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -19,18 +18,25 @@ jobs:
         node-version: [10.x, 12.x, 14.x]
 
     steps:
-
       - name: Checkout 🛎️
         uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
         with:
           persist-credentials: false
 
+      - name: Update version
+        run: |
+          npm version minor
+      - name: Deploy 🚀
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: master # The branch the action should deploy to.
+          FOLDER: ./ # The folder the action should deploy.
+
       - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: | 
+        run: |
           git config --global user.name 'Github Actions Script'
           git config --global user.email 'josiahayres@gmail.com'
           npm install
-          npm version minor
           npm run build
 
       - name: Deploy 🚀
