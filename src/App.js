@@ -10,7 +10,7 @@ function App() {
   const [hour2, setHour2] = React.useState(0);
   const [minute, setMinute] = React.useState(0);
   const [minute2, setMinute2] = React.useState(0);
-  const [is24hr, setIs24hr] = React.useState(false);
+  const [is24hr] = React.useState(false);
 
   React.useEffect(() => {
 
