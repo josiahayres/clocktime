@@ -11,3 +11,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/an
 ```terminal
 npm run deploy
 ```
+
+Should auto deploy on push to master branch & bump minor version
