@@ -54,7 +54,9 @@
 	background-color: rgba(1, 1, 1, 0.25);
 	backdrop-filter: blur(4px);
 	z-index: 1000;
-	align-content: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
 }
 .optionsContainer {
 	background-color: #272323;
