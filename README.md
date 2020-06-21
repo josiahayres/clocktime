@@ -1,6 +1,6 @@
 # Clocktime
 
-![Github Pages Auto Deploy](https://github.com/josiahayres/clocktime/workflows/Github%20Pages%20Auto%20Deploy/badge.svg?branch=master&event=check_suite)
+![Github Pages Auto Deploy](https://github.com/josiahayres/clocktime/workflows/Github%20Pages%20Auto%20Deploy/badge.svg?branch=master)
 
 See the app running [here](https://josiahayres.github.io/clocktime/).
 
