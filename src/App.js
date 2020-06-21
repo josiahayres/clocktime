@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Digit from './components/Digit/Digit';
+import useLocalStorage from "./hooks/useLocalStorage";
 import Conditional from './components/Conditional/Conditional';
 import Toggle from "./components/Toggle/Toggle";
+import { useSnackbar } from 'notistack';
+
+
 import pkg from '../package.json';
 
 import './App.css';
 
 function App() {
+  const { enqueueSnackbar } = useSnackbar();
   const [time, setTime] = useState(new Date());
   const [hour, setHour] = useState(0);
   const [hour2, setHour2] = useState(0);
@@ -14,13 +19,12 @@ function App() {
   const [minute2, setMinute2] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [seconds2, setSeconds2] = useState(0);
-
   const [optionsVisible, setOptionsVisible] = useState(false);
 
   /** Options */
-  const [is24hr, setIs24hr] = useState(false);
-  const [showSeconds, setShowSeconds] = useState(false);
-  const [showDivider, setShowDivider] = useState(true);
+  const [is24hr, setIs24hr] = useLocalStorage(false);
+  const [showSeconds, setShowSeconds] = useLocalStorage(false);
+  const [showDivider, setShowDivider] = useLocalStorage(true);
 
   useEffect(() => {
     const interval = setInterval(() => setTime(new Date()), 1000);
@@ -32,7 +36,6 @@ function App() {
   useEffect(() => {
     // 12 hr time
     const timer = (is24hr || time.getHours() <= 12) ? time.getHours() : time.getHours() % 12;
-
     const hourStr = (timer).toString().padStart(2, "0");
     const minuteStr = (time.getMinutes().toString().padStart(2, 0));
     const secondsStr = (time.getSeconds().toString().padStart(2, 0));
@@ -45,6 +48,13 @@ function App() {
     setSeconds2(Number(secondsStr[1]));
   }, [time, is24hr]);
 
+  const closeOptions = () => {
+    setOptionsVisible(false);
+    const message = "Your preferences are now saved between browser reloads!";
+    enqueueSnackbar(message, {
+      variant: 'info',
+    });
+  }
   const optionsOverlay = <div className="overlay" >
     <div className="optionsContainer" onClick={(e) => e.stopPropagation()}>
       <h2>Clocktime</h2>
@@ -64,10 +74,8 @@ function App() {
           onClick={() => setShowDivider(!showDivider)} />
         <h3>Background</h3>
         <p>Coming soon...</p>
-        <h3>Save preferences</h3>
-        <p>Coming soon...</p>
       </div>
-      <button className="closeButton" onClick={() => setOptionsVisible(false)}>Close</button>
+      <button className="closeButton" onClick={() => closeOptions()}>Close</button>
     </div>
   </div>;
 
