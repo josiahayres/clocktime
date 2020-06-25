@@ -4,6 +4,7 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import Conditional from './components/Conditional/Conditional';
 import Toggle from "./components/Toggle/Toggle";
 import Radio from "./components/Radio/Radio";
+import RadioGroup from "./components/Radio/RadioGroup";
 import { useSnackbar } from 'notistack';
 
 
@@ -75,12 +76,12 @@ function App() {
           checked={showDivider}
           onClick={() => setShowDivider(!showDivider)} />
         <p>Clock size</p>
-        <Radio size="tiny" name="clocksize" onClick={(e) => setClockSize(e.target.id)} selected={clockSize} />
-        <Radio size="small" name="clocksize" onClick={(e) => setClockSize(e.target.id)} selected={clockSize} />
-        <Radio size="regular" name="clocksize" onClick={(e) => setClockSize(e.target.id)} selected={clockSize} />
-        <Radio size="large" name="clocksize" onClick={(e) => setClockSize(e.target.id)} selected={clockSize} />
-
-
+        <RadioGroup>
+          <Radio size="tiny" name="clocksize" onClick={(size) => setClockSize(size)} selected={clockSize} />
+          <Radio size="small" name="clocksize" onClick={(size) => setClockSize(size)} selected={clockSize} />
+          <Radio size="regular" name="clocksize" onClick={(size) => setClockSize(size)} selected={clockSize} />
+          <Radio size="large" name="clocksize" onClick={(size) => setClockSize(size)} selected={clockSize} />
+        </RadioGroup>
 
         <h3>Background</h3>
         <p>Coming soon...</p>
