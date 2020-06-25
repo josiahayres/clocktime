@@ -3,6 +3,7 @@ import Digit from './components/Digit/Digit';
 import useLocalStorage from "./hooks/useLocalStorage";
 import Conditional from './components/Conditional/Conditional';
 import Toggle from "./components/Toggle/Toggle";
+import Radio from "./components/Radio/Radio";
 import { useSnackbar } from 'notistack';
 
 
@@ -19,12 +20,13 @@ function App() {
   const [minute2, setMinute2] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [seconds2, setSeconds2] = useState(0);
-  const [optionsVisible, setOptionsVisible] = useState(false);
+  const [optionsVisible, setOptionsVisible] = useState(true);
 
   /** Options */
   const [is24hr, setIs24hr] = useLocalStorage("is24Hr", false);
   const [showSeconds, setShowSeconds] = useLocalStorage("showSeconds", false);
   const [showDivider, setShowDivider] = useLocalStorage("showDivider", true);
+  const [clockSize, setClockSize] = useLocalStorage("clockSize", "small");
 
   useEffect(() => {
     const interval = setInterval(() => setTime(new Date()), 1000);
@@ -72,12 +74,20 @@ function App() {
           label="Divider"
           checked={showDivider}
           onClick={() => setShowDivider(!showDivider)} />
+        <p>Clock size</p>
+        <Radio size="tiny" name="clocksize" onClick={(e) => setClockSize(e.target.id)} selected={clockSize} />
+        <Radio size="small" name="clocksize" onClick={(e) => setClockSize(e.target.id)} selected={clockSize} />
+        <Radio size="regular" name="clocksize" onClick={(e) => setClockSize(e.target.id)} selected={clockSize} />
+        <Radio size="large" name="clocksize" onClick={(e) => setClockSize(e.target.id)} selected={clockSize} />
+
+
+
         <h3>Background</h3>
         <p>Coming soon...</p>
       </div>
       <button className="closeButton" onClick={() => closeOptions()}>Close</button>
     </div>
-  </div>;
+  </div >;
 
   return (
     <>
@@ -86,19 +96,19 @@ function App() {
       </Conditional>
       <div className="app">
         <div className="time">
-          <Digit number={hour} />
-          <Digit number={hour2} />
+          <Digit number={hour} size={clockSize} />
+          <Digit number={hour2} size={clockSize} />
         </div>
         <Conditional when={showDivider}><div className="divider">:</div></Conditional>
         <div className="time">
-          <Digit number={minute} />
-          <Digit number={minute2} />
+          <Digit number={minute} size={clockSize} />
+          <Digit number={minute2} size={clockSize} />
         </div>
         <Conditional when={showSeconds}>
           <Conditional when={showDivider}><div className="divider">:</div></Conditional>
           <div className="time">
-            <Digit number={seconds} />
-            <Digit number={seconds2} />
+            <Digit number={seconds} size={clockSize} />
+            <Digit number={seconds2} size={clockSize} />
           </div>
         </Conditional>
         <span><span className="optionsBtn" onClick={() => setOptionsVisible(true)}>options</span>  | {`${pkg.name} (${pkg.version})`}</span>
