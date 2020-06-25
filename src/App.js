@@ -22,9 +22,9 @@ function App() {
   const [optionsVisible, setOptionsVisible] = useState(false);
 
   /** Options */
-  const [is24hr, setIs24hr] = useLocalStorage(false);
-  const [showSeconds, setShowSeconds] = useLocalStorage(false);
-  const [showDivider, setShowDivider] = useLocalStorage(true);
+  const [is24hr, setIs24hr] = useLocalStorage("is24Hr", false);
+  const [showSeconds, setShowSeconds] = useLocalStorage("showSeconds", false);
+  const [showDivider, setShowDivider] = useLocalStorage("showDivider", true);
 
   useEffect(() => {
     const interval = setInterval(() => setTime(new Date()), 1000);
