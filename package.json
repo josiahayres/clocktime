@@ -1,6 +1,6 @@
 {
   "name": "clocktime",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "homepage": "https://josiahayres.github.io/clocktime/",
   "dependencies": {
