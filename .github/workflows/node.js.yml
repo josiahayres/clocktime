@@ -37,10 +37,4 @@ jobs:
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: build # The folder the action should deploy.
           
-      - name: Git Release
-        # You may pin to the exact commit or the version.
-        # uses: anton-yurchenko/git-release@c342fb49c86ad2078b1c7a651d5d0b7d22bfc0ca
-        uses: anton-yurchenko/git-release@v3.4.0
-        with:
-          # Release Assets
-          args: # optional
+ 
