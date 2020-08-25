@@ -6,6 +6,7 @@ module.exports = {
 	title: "REACT STARTER APP Style Guide",
 	version: `Version ${pkg.version}`,
 	assetsDir: "public",
+	styleguideDir: "build/styleguide",
 	pagePerSection: true,
 	defaultExample: true,
 	skipComponentsWithoutExample: true,
