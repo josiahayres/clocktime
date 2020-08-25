@@ -1,16 +1,15 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-const Conditional = (props = { when: true, children: null }) => {
-    const { when, children } = props;
-    if (!when) return null;
-    return (when && children);
+function Conditional({ when = true, children = null } = {}) {
+	return typeof when === "boolean" && !!when && children;
 }
 
 Conditional.propTypes = {
-    /** 
-     * When true, renders the children
-     * @default true
-     */
-    when: PropTypes.bool
-}
+	/**
+	 * When true, renders the children
+	 * @default true
+	 */
+	when: PropTypes.bool.isRequired,
+};
+
 export default Conditional;
