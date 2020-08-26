@@ -4,4 +4,8 @@
 
 View the clock running [here](https://josiahayres.github.io/clocktime/).
 
-Github Actions now auto deploys the gh_pages branch on commit/merge into `master`.
+View the styleguide for this project [here](https://josiahayres.github.io/clocktime/styleguide/index.html).
+
+
+Github Actions kick in on commit/merge into `master`. 
+If all tests are passing & the project builds (react build and styleguide build) - it'll get deployed to Github pages site 👍
