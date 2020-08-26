@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Digit from "components/Digit/Digit.js";
+import Digit from "components/Digit/Digit";
 import useLocalStorage from "hooks/useLocalStorage";
 import Conditional from "components/Conditional/Conditional";
 import Toggle from "components/Toggle/Toggle";
