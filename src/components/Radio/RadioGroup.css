@@ -25,6 +25,7 @@ ul li {
 	width: 100%;
 	height: 100px;
 	border-bottom: 1px solid #333;
+	background-color: #272323;
 }
 
 ul li input[type="radio"] {
@@ -73,8 +74,8 @@ ul li .check::before {
 	border-radius: 100%;
 	height: 10px;
 	width: 10px;
-	top: 3px;
-	left: 2px;
+	top: 2.5px;
+	left: 2.5px;
 	margin: auto;
 	transition: background 0.25s linear;
 	-webkit-transition: background 0.25s linear;
