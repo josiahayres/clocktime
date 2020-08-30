@@ -89,25 +89,25 @@ function Clock() {
 					<RadioGroup>
 						<Radio
 							value="tiny"
-							name="clocksize"
+							name="clockSize"
 							onClick={(size) => setClockSize(size)}
 							selected={clockSize}
 						/>
 						<Radio
 							value="small"
-							name="clocksize"
+							name="clockSize"
 							onClick={(size) => setClockSize(size)}
 							selected={clockSize}
 						/>
 						<Radio
 							value="regular"
-							name="clocksize"
+							name="clockSize"
 							onClick={(size) => setClockSize(size)}
 							selected={clockSize}
 						/>
 						<Radio
 							value="large"
-							name="clocksize"
+							name="clockSize"
 							onClick={(size) => setClockSize(size)}
 							selected={clockSize}
 						/>
