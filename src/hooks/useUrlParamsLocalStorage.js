@@ -1,11 +1,12 @@
 import { useState } from "react";
 const url = new URL(window.location.href);
-// Hook
+
 /**
  * HOOK
- * For given
+ * Return value for given key (from url, local storage, provided default)
+ * When setting the value for the key, save to url and local storage.
  * @param {String} key key of the value to store
- * @param {*} initialValue any data to store into localstorage
+ * @param {*} initialValue any data to store into localStorage
  */
 export default function useLocalStorage(key, initialValue) {
 	// State to store our value
@@ -13,12 +14,11 @@ export default function useLocalStorage(key, initialValue) {
 	const [storedValue, setStoredValue] = useState(() => {
 		try {
 			const keyIsInUrl = url.searchParams.has(key);
-			const urlValue = url.searchParams.get(key);
-
-			if (keyIsInUrl) return JSON.parse(urlValue);
+			if (keyIsInUrl) return JSON.parse(url.searchParams.get(key));
 
 			// Get from local storage by key
 			const item = window.localStorage.getItem(key);
+
 			// Parse stored json or if none return initialValue
 			return item ? JSON.parse(item) : initialValue;
 		} catch (error) {

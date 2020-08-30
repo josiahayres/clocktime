@@ -7,7 +7,7 @@ import Radio from "components/Radio/Radio";
 import RadioGroup from "components/Radio/RadioGroup";
 import Toggle from "components/Toggle/Toggle";
 
-import useLocalStorage from "hooks/useUrlParamsLocalStorage";
+import useUrlParamsLocalStorage from "hooks/useUrlParamsLocalStorage";
 
 import pkg from "../../package.json";
 
@@ -25,10 +25,19 @@ function Clock() {
 	const [optionsVisible, setOptionsVisible] = useState(false);
 
 	/** Options */
-	const [is24hr, setIs24hr] = useLocalStorage("is24Hr", false);
-	const [showSeconds, setShowSeconds] = useLocalStorage("showSeconds", false);
-	const [showDivider, setShowDivider] = useLocalStorage("showDivider", true);
-	const [clockSize, setClockSize] = useLocalStorage("clockSize", "small");
+	const [is24hr, setIs24hr] = useUrlParamsLocalStorage("is24Hr", false);
+	const [showSeconds, setShowSeconds] = useUrlParamsLocalStorage(
+		"showSeconds",
+		false
+	);
+	const [showDivider, setShowDivider] = useUrlParamsLocalStorage(
+		"showDivider",
+		true
+	);
+	const [clockSize, setClockSize] = useUrlParamsLocalStorage(
+		"clockSize",
+		"small"
+	);
 
 	useEffect(() => {
 		const interval = setInterval(() => setTime(new Date()), 1000);
