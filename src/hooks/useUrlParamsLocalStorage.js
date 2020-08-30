@@ -8,7 +8,7 @@ const url = new URL(window.location.href);
  * @param {String} key key of the value to store
  * @param {*} initialValue any data to store into localStorage
  */
-export default function useLocalStorage(key, initialValue) {
+export default function useUrlParamsLocalStorage(key, initialValue) {
 	// State to store our value
 	// Pass initial state function to useState so logic is only executed once
 	const [storedValue, setStoredValue] = useState(() => {
