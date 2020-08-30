@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Digit from "components/Digit/Digit";
-import useLocalStorage from "hooks/useLocalStorage";
+import { useSnackbar } from "notistack";
+
 import Conditional from "components/Conditional/Conditional";
-import Toggle from "components/Toggle/Toggle";
+import Digit from "components/Digit/Digit";
 import Radio from "components/Radio/Radio";
 import RadioGroup from "components/Radio/RadioGroup";
-import { useSnackbar } from "notistack";
+import Toggle from "components/Toggle/Toggle";
+
+import useLocalStorage from "hooks/useUrlParamsLocalStorage";
 
 import pkg from "../../package.json";
 
@@ -90,13 +92,13 @@ function Clock() {
 						<Radio
 							value="tiny"
 							name="clockSize"
-							onClick={(size) => setClockSize(size)}
+							onClick={setClockSize}
 							selected={clockSize}
 						/>
 						<Radio
 							value="small"
 							name="clockSize"
-							onClick={(size) => setClockSize(size)}
+							onClick={setClockSize}
 							selected={clockSize}
 						/>
 						<Radio
@@ -115,6 +117,18 @@ function Clock() {
 
 					<h3>Background</h3>
 					<p>Coming soon...</p>
+					<button
+						onClick={() => {
+							window.localStorage.clear();
+							window.history.pushState(
+								"",
+								"Clocktime",
+								window.location.pathname
+							);
+						}}
+					>
+						Reset to default
+					</button>
 				</div>
 				<button className="closeButton" onClick={() => closeOptions()}>
 					Close
