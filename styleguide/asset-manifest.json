@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/clocktime/static/css/main.47e32e0d.chunk.css",
-    "main.js": "/clocktime/build/main.6686e765.js",
+    "main.css": "/clocktime/static/css/main.9f964776.chunk.css",
+    "main.js": "/clocktime/build/main.635b62a0.js",
     "runtime-main.js": "/clocktime/build/bundle.b1e58a59.js",
-    "build/2.66f3a36a.js": "/clocktime/build/2.66f3a36a.js",
+    "build/2.6d5bf11a.js": "/clocktime/build/2.6d5bf11a.js",
     "android-chrome-192x192.png": "/clocktime/android-chrome-192x192.png",
     "android-chrome-512x512.png": "/clocktime/android-chrome-512x512.png",
     "apple-touch-icon.png": "/clocktime/apple-touch-icon.png",
-    "build/2.66f3a36a.js.LICENSE.txt": "/clocktime/build/2.66f3a36a.js.LICENSE.txt",
+    "build/2.6d5bf11a.js.LICENSE.txt": "/clocktime/build/2.6d5bf11a.js.LICENSE.txt",
     "favicon-16x16.png": "/clocktime/favicon-16x16.png",
     "favicon-32x32.png": "/clocktime/favicon-32x32.png",
     "favicon.ico": "/clocktime/favicon.ico",
@@ -15,15 +15,15 @@
     "logo192.png": "/clocktime/logo192.png",
     "logo512.png": "/clocktime/logo512.png",
     "manifest.json": "/clocktime/manifest.json",
-    "precache-manifest.7bce65f95d80db5b7a960387752f4cfa.js": "/clocktime/precache-manifest.7bce65f95d80db5b7a960387752f4cfa.js",
+    "precache-manifest.3c6610387bf8b7da2b40c19eaf72f6e4.js": "/clocktime/precache-manifest.3c6610387bf8b7da2b40c19eaf72f6e4.js",
     "robots.txt": "/clocktime/robots.txt",
     "service-worker.js": "/clocktime/service-worker.js",
-    "static/css/main.47e32e0d.chunk.css.map": "/clocktime/static/css/main.47e32e0d.chunk.css.map"
+    "static/css/main.9f964776.chunk.css.map": "/clocktime/static/css/main.9f964776.chunk.css.map"
   },
   "entrypoints": [
     "build/bundle.b1e58a59.js",
-    "build/2.66f3a36a.js",
-    "static/css/main.47e32e0d.chunk.css",
-    "build/main.6686e765.js"
+    "build/2.6d5bf11a.js",
+    "static/css/main.9f964776.chunk.css",
+    "build/main.635b62a0.js"
   ]
 }
