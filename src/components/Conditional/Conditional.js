@@ -12,7 +12,6 @@ function Conditional({ when = true, children = null } = {}) {
 Conditional.propTypes = {
 	/**
 	 * When true, renders the children
-	 * @default true
 	 */
 	when: PropTypes.bool.isRequired,
 };

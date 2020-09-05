@@ -24,6 +24,71 @@ module.exports = {
 		},
 	],
 
+	propsParser(filePath, source, resolver, handlers) {
+		// console.log(filePath, source, resolver, handlers);
+		const customHandler = (documentation, definition, parser) => {
+			try {
+				// console.log("customHandler() for ", filePath);
+				// console.log(
+				// 	"customHandler() - component has props: ",
+				// 	documentation._props
+				// );
+				// _props is a map so we can .get and .set
+
+				// console.log(
+				// 	"customHandler() definition",
+				// 	Object.keys(definition),
+				// 	definition.__childCache.body.parentPath.value.params[0].loc
+				// );
+				const {
+					start,
+					end,
+				} = definition.__childCache.body.parentPath.value.params[0].loc;
+				// console.log(Object.keys(definition.value));
+				// console.log(
+				// 	"customHandler() definition - start,end",
+				// 	start,
+				// 	end
+				// );
+				const sourceRows = source.split(/\n/);
+				const destructuredProps = sourceRows[start.line - 1].slice(
+					start.column,
+					end.column
+				);
+				// console.log("destructuredProps", destructuredProps);
+				const noDefaultAssign = destructuredProps.replace("= {}", "");
+				// console.log("noDefaultAssign", noDefaultAssign);
+				const asObjStr = noDefaultAssign.replace(/=/g, ":");
+				// console.log("asObjStr", asObjStr);
+				const propsObject = JSON.parse(
+					asObjStr.replace(/(\{|,)\s*(.+?)\s*:/g, '$1 "$2":')
+				);
+				// console.log(propsObject);
+
+				// # Set the default props
+
+				// Get the existing info about this prop
+				for (const [key, value] of documentation._props.entries()) {
+					// Save the default information from the propsObject, with the existing info
+					documentation._props.set(key, {
+						...value,
+						defaultValue: {
+							value: propsObject[key],
+							computed: false,
+						},
+					});
+				}
+			} catch (error) {
+				console.log("Failed to enrich default value for:", filePath);
+			}
+		};
+		const props = require("react-docgen").parse(source, resolver, [
+			...handlers,
+			customHandler,
+		]);
+		return props;
+	},
+
 	getComponentPathLine(componentPath) {
 		const name = path.basename(componentPath, ".js");
 		const dir = path.dirname(componentPath).replace(/src\//, "");
