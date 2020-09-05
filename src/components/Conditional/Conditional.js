@@ -1,7 +1,12 @@
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
 function Conditional({ when = true, children = null } = {}) {
-	return typeof when === "boolean" && !!when && children;
+	return typeof when === "boolean" && !!when ? (
+		children
+	) : (
+		<Fragment></Fragment>
+	);
 }
 
 Conditional.propTypes = {
