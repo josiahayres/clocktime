@@ -38,7 +38,6 @@ function ClockW3(props) {
 			setRadius(radius * 0.9);
 			setSetupComplete(true);
 		} else {
-			console.log("ctx is not usable");
 			setCtx(canvas?.current?.getContext("2d"));
 		}
 	}, [ctx, canvas, radius, setupComplete]);
