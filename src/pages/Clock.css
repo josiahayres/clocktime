@@ -82,3 +82,85 @@ h3 {
 	top: 0em;
 	background: #272323;
 }
+
+.animatedBackgroundOne {
+	background: linear-gradient(
+		334deg,
+		#45524f,
+		#19295d,
+		#2b5d1c,
+		#85530f,
+		#5a537d,
+		#08302a
+	);
+	background-size: 1200% 1200%;
+	-webkit-animation: FadeBackgroundColour 59s ease infinite;
+	-moz-animation: FadeBackgroundColour 59s ease infinite;
+	animation: FadeBackgroundColour 59s ease infinite;
+}
+
+.animatedBackgroundTwo {
+	background: linear-gradient(
+		334deg,
+		#cf2222,
+		#a5512a,
+		#af9818,
+		#0e962b,
+		#2f58b3,
+		#460958
+	);
+	background-size: 1200% 1200%;
+	-webkit-animation: FadeBackgroundColour 59s ease infinite;
+	-moz-animation: FadeBackgroundColour 59s ease infinite;
+	animation: FadeBackgroundColour 59s ease infinite;
+}
+
+.animatedBackgroundThree {
+	background: linear-gradient(
+		334deg,
+		#7f7eff,
+		#a390e4,
+		#c69dd2,
+		#0e962b,
+		#cc8b8c,
+		#cc8b8c
+	);
+	background-size: 1200% 1200%;
+	-webkit-animation: FadeBackgroundColour 59s ease infinite;
+	-moz-animation: FadeBackgroundColour 59s ease infinite;
+	animation: FadeBackgroundColour 59s ease infinite;
+}
+
+@-webkit-keyframes FadeBackgroundColour {
+	0% {
+		background-position: 0% 19%;
+	}
+	50% {
+		background-position: 100% 82%;
+	}
+	100% {
+		background-position: 0% 19%;
+	}
+}
+@-moz-keyframes FadeBackgroundColour {
+	0% {
+		background-position: 0% 19%;
+	}
+	50% {
+		background-position: 100% 82%;
+	}
+	100% {
+		background-position: 0% 19%;
+	}
+}
+@keyframes FadeBackgroundColour {
+	0% {
+		background-position: 0% 19%;
+	}
+	50% {
+		background-position: 100% 82%;
+	}
+	100% {
+		background-position: 0% 19%;
+	}
+}

@@ -6,6 +6,8 @@ import Digit from "components/Digit/Digit";
 import Radio from "components/Radio/Radio";
 import RadioGroup from "components/Radio/RadioGroup";
 import Toggle from "components/Toggle/Toggle";
+import ColourSelect from "components/ColourSelect/ColourSelect";
+import ColourSelectGroup from "components/ColourSelect/ColourSelectGroup";
 
 import useUrlParamsLocalStorage from "hooks/useUrlParamsLocalStorage";
 
@@ -37,6 +39,10 @@ function Clock() {
 	const [clockSize, setClockSize] = useUrlParamsLocalStorage(
 		"clockSize",
 		"small"
+	);
+	const [backgroundOption, setBackgroundName] = useUrlParamsLocalStorage(
+		"backgroundOption",
+		"animatedBackgroundOne"
 	);
 
 	useEffect(() => {
@@ -125,7 +131,30 @@ function Clock() {
 					</RadioGroup>
 
 					<h3>Background</h3>
-					<p>Coming soon...</p>
+					<ColourSelectGroup>
+						<ColourSelect
+							value="animatedBackgroundOne"
+							selected={backgroundOption}
+							onClick={(backgroundName) =>
+								setBackgroundName(backgroundName)
+							}
+						/>
+						<ColourSelect
+							value="animatedBackgroundTwo"
+							selected={backgroundOption}
+							onClick={(backgroundName) =>
+								setBackgroundName(backgroundName)
+							}
+						/>
+
+						<ColourSelect
+							value="animatedBackgroundThree"
+							selected={backgroundOption}
+							onClick={(backgroundName) =>
+								setBackgroundName(backgroundName)
+							}
+						/>
+					</ColourSelectGroup>
 					<button
 						onClick={() => {
 							window.localStorage.clear();
@@ -149,7 +178,7 @@ function Clock() {
 	return (
 		<>
 			<Conditional when={optionsVisible}>{optionsOverlay}</Conditional>
-			<div className="app">
+			<div className={`app ${backgroundOption}`}>
 				<div className="time">
 					<Digit number={hour} size={clockSize} />
 					<Digit number={hour2} size={clockSize} />

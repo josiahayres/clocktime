@@ -27,7 +27,8 @@ h2 {
 	width: 7em;
 	margin: 0 1em 1em 0;
 	border-radius: 1em;
-	overflow: hidden;
+	background-size: auto;
+	animation: none;
 }
 
 .colourSelectGroup ul li .check {

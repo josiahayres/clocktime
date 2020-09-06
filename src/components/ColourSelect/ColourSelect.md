@@ -3,25 +3,27 @@ Example
 ```jsx
 import ColourSelectGroup from "./ColourSelectGroup";
 
-const [clockSize, setClockSize] = React.useState("animatedBackgroundOne");
+const [backgroundName, setBackgroundName] = React.useState(
+	"animatedBackgroundOne"
+);
 <>
-	{`Selected: ${clockSize}`}
+	{`Selected: ${backgroundName}`}
 	<ColourSelectGroup>
 		<ColourSelect
 			value="animatedBackgroundOne"
-			selected={clockSize}
-			onClick={(size) => setClockSize(size)}
+			selected={backgroundName}
+			onClick={(size) => setBackgroundName(size)}
 		/>
 		<ColourSelect
 			value="animatedBackgroundTwo"
-			selected={clockSize}
-			onClick={(size) => setClockSize(size)}
+			selected={backgroundName}
+			onClick={(size) => setBackgroundName(size)}
 		/>
 
 		<ColourSelect
 			value="red"
-			selected={clockSize}
-			onClick={(size) => setClockSize(size)}
+			selected={backgroundName}
+			onClick={(size) => setBackgroundName(size)}
 		/>
 	</ColourSelectGroup>
 </>;
