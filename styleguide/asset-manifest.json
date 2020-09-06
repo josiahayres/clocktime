@@ -3,11 +3,11 @@
     "main.css": "/clocktime/static/css/main.83c42f0a.chunk.css",
     "main.js": "/clocktime/build/main.97538fba.js",
     "runtime-main.js": "/clocktime/build/bundle.b1e58a59.js",
-    "build/2.a05908e4.js": "/clocktime/build/2.a05908e4.js",
+    "build/2.44493971.js": "/clocktime/build/2.44493971.js",
     "android-chrome-192x192.png": "/clocktime/android-chrome-192x192.png",
     "android-chrome-512x512.png": "/clocktime/android-chrome-512x512.png",
     "apple-touch-icon.png": "/clocktime/apple-touch-icon.png",
-    "build/2.a05908e4.js.LICENSE.txt": "/clocktime/build/2.a05908e4.js.LICENSE.txt",
+    "build/2.44493971.js.LICENSE.txt": "/clocktime/build/2.44493971.js.LICENSE.txt",
     "favicon-16x16.png": "/clocktime/favicon-16x16.png",
     "favicon-32x32.png": "/clocktime/favicon-32x32.png",
     "favicon.ico": "/clocktime/favicon.ico",
@@ -15,14 +15,14 @@
     "logo192.png": "/clocktime/logo192.png",
     "logo512.png": "/clocktime/logo512.png",
     "manifest.json": "/clocktime/manifest.json",
-    "precache-manifest.bc2b369e880ee0adacfcd7b0efd42cb6.js": "/clocktime/precache-manifest.bc2b369e880ee0adacfcd7b0efd42cb6.js",
+    "precache-manifest.aa37c6819503323fd21ef7337a50fda3.js": "/clocktime/precache-manifest.aa37c6819503323fd21ef7337a50fda3.js",
     "robots.txt": "/clocktime/robots.txt",
     "service-worker.js": "/clocktime/service-worker.js",
     "static/css/main.83c42f0a.chunk.css.map": "/clocktime/static/css/main.83c42f0a.chunk.css.map"
   },
   "entrypoints": [
     "build/bundle.b1e58a59.js",
-    "build/2.a05908e4.js",
+    "build/2.44493971.js",
     "static/css/main.83c42f0a.chunk.css",
     "build/main.97538fba.js"
   ]
