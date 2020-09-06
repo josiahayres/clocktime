@@ -1,7 +1,7 @@
 .colourSelectGroup input[type="radio"]:checked ~ .check {
 	border: 0.5em solid #8ab756;
-	height: 6em;
-	width: 6em;
+	height: 5em;
+	width: 5em;
 }
 
 .colourSelectGroup [type="radio"]:checked ~ .check::before {

@@ -32,7 +32,7 @@
 	border-radius: 10px;
 	border: none;
 	font-size: 1em;
-	color: #272323;
+	color: #383535;
 }
 
 .closeButton:active {
@@ -59,7 +59,7 @@
 	display: flex;
 }
 .optionsContainer {
-	background-color: #272323;
+	background-color: #383535;
 	color: #92c9f5;
 	width: 400px;
 	z-index: 1001;
@@ -78,9 +78,9 @@
 }
 
 h3 {
-	position: sticky;
+	/* position: sticky; */
 	top: 0em;
-	background: #272323;
+	background: #383535;
 }
 
 .animatedBackgroundOne {

@@ -16,6 +16,7 @@ h2 {
 	padding: 0;
 	overflow: auto;
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .colourSelectGroup ul li {
@@ -23,8 +24,8 @@ h2 {
 	display: block;
 	position: relative;
 	float: left;
-	height: 7em;
-	width: 7em;
+	height: 6em;
+	width: 6em;
 	margin: 0 1em 1em 0;
 	border-radius: 1em;
 	background-size: auto;
@@ -34,8 +35,8 @@ h2 {
 .colourSelectGroup ul li .check {
 	border: 0.5em solid #aaaaaa;
 	border-radius: 1em;
-	height: 6em;
-	width: 6em;
+	height: 5em;
+	width: 5em;
 	top: 0;
 	left: 0;
 	right: 0;
