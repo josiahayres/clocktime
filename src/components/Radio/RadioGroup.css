@@ -1,4 +1,4 @@
-.container {
+.radioContainer {
 	display: block;
 	position: relative;
 	margin: 10px auto;
@@ -10,14 +10,14 @@ h2 {
 	color: #aaaaaa;
 }
 
-.container ul {
+.radioContainer ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	overflow: auto;
 }
 
-ul li {
+.radioContainer ul li {
 	color: #aaaaaa;
 	display: block;
 	position: relative;
@@ -28,12 +28,12 @@ ul li {
 	background-color: #272323;
 }
 
-ul li input[type="radio"] {
+.radioContainer ul li input[type="radio"] {
 	position: absolute;
 	visibility: hidden;
 }
 
-ul li label {
+.radioContainer ul li label {
 	display: block;
 	position: relative;
 	font-weight: 300;
@@ -45,11 +45,11 @@ ul li label {
 	-webkit-transition: all 0.25s linear;
 }
 
-ul li:hover label {
+.radioContainer ul li:hover label {
 	color: #ffffff;
 }
 
-ul li .check {
+.radioContainer ul li .check {
 	display: block;
 	position: absolute;
 	border: 5px solid #aaaaaa;
@@ -63,11 +63,11 @@ ul li .check {
 	-webkit-transition: border 0.25s linear;
 }
 
-ul li:hover .check {
+.radioContainer ul li:hover .check {
 	border: 5px solid #ffffff;
 }
 
-ul li .check::before {
+.radioContainer ul li .check::before {
 	display: block;
 	position: absolute;
 	content: "";

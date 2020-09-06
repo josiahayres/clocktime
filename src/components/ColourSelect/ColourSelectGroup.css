@@ -1,0 +1,52 @@
+.colourSelectGroup {
+	display: block;
+	position: relative;
+	margin: 10px auto;
+	height: auto;
+	padding: 20px;
+}
+
+h2 {
+	color: #aaaaaa;
+}
+
+.colourSelectGroup ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+	display: flex;
+}
+
+.colourSelectGroup ul li {
+	color: #aaaaaa;
+	display: block;
+	position: relative;
+	float: left;
+	height: 7em;
+	width: 7em;
+	margin: 0 1em 1em 0;
+	border-radius: 1em;
+	overflow: hidden;
+}
+
+.colourSelectGroup ul li .check {
+	border: 0.5em solid #aaaaaa;
+	border-radius: 1em;
+	height: 6em;
+	width: 6em;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: border 0.25s ease-in;
+	-webkit-transition: border 0.25s ease-in;
+}
+.colourSelectGroup ul li:hover .check {
+	border: 0.5em solid #ffffff;
+}
+
+.colourSelectGroup ul li input[type="radio"] {
+	position: absolute;
+	visibility: hidden;
+}

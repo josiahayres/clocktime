@@ -1,0 +1,13 @@
+.colourSelectGroup input[type="radio"]:checked ~ .check {
+	border: 0.75em solid #8ab756;
+	height: 5.5em;
+	width: 5.5em;
+}
+
+.colourSelectGroup [type="radio"]:checked ~ .check::before {
+	background: #8ab756;
+}
+
+.colourSelectGroup input[type="radio"]:checked ~ label {
+	color: #8ab756;
+}

@@ -1,11 +1,11 @@
-input[type="radio"]:checked ~ .check {
+.radioContainer input[type="radio"]:checked ~ .check {
 	border: 5px solid #8ab756;
 }
 
-input[type="radio"]:checked ~ .check::before {
+.radioContainer input[type="radio"]:checked ~ .check::before {
 	background: #8ab756;
 }
 
-input[type="radio"]:checked ~ label {
+.radioContainer input[type="radio"]:checked ~ label {
 	color: #8ab756;
 }
