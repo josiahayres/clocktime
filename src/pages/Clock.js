@@ -10,7 +10,6 @@ import ColourSelect from "components/ColourSelect/ColourSelect";
 import ColourSelectGroup from "components/ColourSelect/ColourSelectGroup";
 
 import useUrlParamsLocalStorage from "hooks/useUrlParamsLocalStorage";
-import Chevron from "./feather-chevron-right.svg";
 
 import pkg from "../../package.json";
 
