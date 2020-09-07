@@ -3,11 +3,7 @@
 	position: relative;
 	margin: 10px auto;
 	height: auto;
-	padding: 20px;
-}
-
-h2 {
-	color: #aaaaaa;
+	padding: 0 2rem;
 }
 
 .colourSelectGroup ul {

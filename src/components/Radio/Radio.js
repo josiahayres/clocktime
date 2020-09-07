@@ -10,7 +10,6 @@ const Radio = ({
 	selected = "",
 	label,
 } = {}) => {
-	console.log(`Radio value: ${value} selected: ${selected}`);
 	return (
 		<li id={value} onClick={() => onClick(value)}>
 			<input

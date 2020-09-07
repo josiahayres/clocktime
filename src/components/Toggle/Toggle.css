@@ -27,10 +27,10 @@
 .slider:before {
 	position: absolute;
 	content: "";
-	height: 26px;
-	width: 26px;
-	left: 4px;
-	bottom: 4px;
+	height: 24px;
+	width: 24px;
+	left: 5px;
+	bottom: 5px;
 	background-color: white;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
@@ -63,5 +63,9 @@ input:checked + .slider:before {
 	text-align: left;
 	display: flex;
 	align-items: center;
-	padding: 0em 2em 1em;
+	padding: 0em 2em 0em;
+	margin-bottom: 15px;
+}
+.toggleContainer p {
+	margin: 0;
 }

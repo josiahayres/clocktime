@@ -5,7 +5,3 @@
 .radioContainer input[type="radio"]:checked ~ .check::before {
 	background: #8ab756;
 }
-
-.radioContainer input[type="radio"]:checked ~ label {
-	color: #8ab756;
-}

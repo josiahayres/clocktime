@@ -10,6 +10,7 @@ import ColourSelect from "components/ColourSelect/ColourSelect";
 import ColourSelectGroup from "components/ColourSelect/ColourSelectGroup";
 
 import useUrlParamsLocalStorage from "hooks/useUrlParamsLocalStorage";
+import Chevron from "./feather-chevron-right.svg";
 
 import pkg from "../../package.json";
 
@@ -27,6 +28,11 @@ function Clock() {
 	const [optionsVisible, setOptionsVisible] = useState(false);
 
 	/** Options */
+
+	const [showInfoAlert, setShowInfoAlert] = useUrlParamsLocalStorage(
+		"showInfoAlert",
+		true
+	);
 	const [is24hr, setIs24hr] = useUrlParamsLocalStorage("is24Hr", false);
 	const [showSeconds, setShowSeconds] = useUrlParamsLocalStorage(
 		"showSeconds",
@@ -72,21 +78,23 @@ function Clock() {
 
 	const closeOptions = () => {
 		setOptionsVisible(false);
-		const message =
-			"Your preferences are now saved between browser reloads!";
+		if (!showInfoAlert) return;
+		const message = "Your preferences are saved between browser reloads!";
 		enqueueSnackbar(message, {
 			variant: "info",
 		});
+		setShowInfoAlert(false);
 	};
+
 	const optionsOverlay = (
-		<div className="overlay">
+		<div className="overlay" onClick={() => closeOptions()}>
 			<div
 				className="optionsContainer"
 				onClick={(e) => e.stopPropagation()}
 			>
-				<h2>Clocktime</h2>
+				<h2>Configure</h2>
 				<div className="options">
-					<h3>Options</h3>
+					<h3>Display</h3>
 					<Toggle
 						label="Seconds"
 						checked={showSeconds}
@@ -102,7 +110,7 @@ function Clock() {
 						checked={showDivider}
 						onClick={() => setShowDivider(!showDivider)}
 					/>
-					<p>Clock size</p>
+					<h3>Clock size</h3>
 					<RadioGroup>
 						<Radio
 							value="tiny"
@@ -129,7 +137,6 @@ function Clock() {
 							selected={clockSize}
 						/>
 					</RadioGroup>
-
 					<h3>Background</h3>
 					<ColourSelectGroup>
 						<ColourSelect
@@ -155,7 +162,7 @@ function Clock() {
 							}
 						/>
 					</ColourSelectGroup>
-					<button
+					{/* <button
 						onClick={() => {
 							window.localStorage.clear();
 							window.history.pushState(
@@ -166,11 +173,8 @@ function Clock() {
 						}}
 					>
 						Reset to default
-					</button>
+					</button> */}
 				</div>
-				<button className="closeButton" onClick={() => closeOptions()}>
-					Close
-				</button>
 			</div>
 		</div>
 	);
