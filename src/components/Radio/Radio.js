@@ -17,6 +17,7 @@ const Radio = ({
 				name="clocksize"
 				value={value}
 				checked={selected === value}
+				onChange={() => onClick(value)}
 			/>
 			<label htmlFor={value}>{label ?? value}</label>
 			<div className="check">
