@@ -5,7 +5,7 @@
     "email": "josiahayres@gmail.com",
     "url": "https://www.linkedin.com/in/josiahayres/"
   },
-  "version": "1.6.4",
+  "version": "1.6.2",
   "private": true,
   "homepage": "https://josiahayres.github.io/clocktime/",
   "dependencies": {
@@ -18,7 +18,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
     "notistack": "^2.0.5",
-    "react": "^18.2@material-ui/core.0",
+    "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "source-map-explorer": "^2.5.2"
