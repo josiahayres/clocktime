@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/clocktime/static/css/main.7ec4b812.chunk.css",
-    "main.js": "/clocktime/build/main.12493fc4.js",
-    "runtime-main.js": "/clocktime/build/bundle.b1e58a59.js",
-    "build/2.13cdd63b.js": "/clocktime/build/2.13cdd63b.js",
-    "android-chrome-192x192.png": "/clocktime/android-chrome-192x192.png",
-    "android-chrome-512x512.png": "/clocktime/android-chrome-512x512.png",
-    "apple-touch-icon.png": "/clocktime/apple-touch-icon.png",
-    "build/2.13cdd63b.js.LICENSE.txt": "/clocktime/build/2.13cdd63b.js.LICENSE.txt",
-    "favicon-16x16.png": "/clocktime/favicon-16x16.png",
-    "favicon-32x32.png": "/clocktime/favicon-32x32.png",
-    "favicon.ico": "/clocktime/favicon.ico",
-    "index.html": "/clocktime/index.html",
-    "logo192.png": "/clocktime/logo192.png",
+    "main.js": "/clocktime/build/bundle.080c94a1.js",
+    "main.css": "/clocktime/static/css/main.debe5792.css",
     "logo512.png": "/clocktime/logo512.png",
+    "android-chrome-512x512.png": "/clocktime/android-chrome-512x512.png",
+    "logo192.png": "/clocktime/logo192.png",
+    "android-chrome-192x192.png": "/clocktime/android-chrome-192x192.png",
+    "apple-touch-icon.png": "/clocktime/apple-touch-icon.png",
+    "favicon.ico": "/clocktime/favicon.ico",
+    "favicon-32x32.png": "/clocktime/favicon-32x32.png",
+    "favicon-16x16.png": "/clocktime/favicon-16x16.png",
+    "Radio.md": "/clocktime/bc78a6866b2fc2cf693f.md",
+    "ColourSelect.md": "/clocktime/318121d9526054d38be0.md",
+    "Clock.md": "/clocktime/c6c33522adc89d730b65.md",
+    "Conditional.md": "/clocktime/49218bcb1b300a911b68.md",
+    "Introduction.md": "/clocktime/aea028acef22a8f98a79.md",
+    "ClockW3.md": "/clocktime/3430d790adb0253bad94.md",
+    "Digit.md": "/clocktime/146969ed9e70e914ab73.md",
+    "Toggle.md": "/clocktime/08ed4332963ea3b19b6b.md",
+    "index.html": "/clocktime/index.html",
     "manifest.json": "/clocktime/manifest.json",
-    "precache-manifest.a0c3511538ee9b2a3d4bcb895924c953.js": "/clocktime/precache-manifest.a0c3511538ee9b2a3d4bcb895924c953.js",
-    "robots.txt": "/clocktime/robots.txt",
-    "service-worker.js": "/clocktime/service-worker.js",
-    "static/css/main.7ec4b812.chunk.css.map": "/clocktime/static/css/main.7ec4b812.chunk.css.map"
+    "robots.txt": "/clocktime/robots.txt"
   },
   "entrypoints": [
-    "build/bundle.b1e58a59.js",
-    "build/2.13cdd63b.js",
-    "static/css/main.7ec4b812.chunk.css",
-    "build/main.12493fc4.js"
+    "build/bundle.080c94a1.js",
+    "static/css/main.debe5792.css"
   ]
 }

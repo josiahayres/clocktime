@@ -1,22 +1,13 @@
 {
   "files": {
-    "main.css": "/clocktime/static/css/main.4157f97a.chunk.css",
-    "main.js": "/clocktime/static/js/main.dcb93586.chunk.js",
-    "main.js.map": "/clocktime/static/js/main.dcb93586.chunk.js.map",
-    "runtime-main.js": "/clocktime/static/js/runtime-main.2c5704bd.js",
-    "runtime-main.js.map": "/clocktime/static/js/runtime-main.2c5704bd.js.map",
-    "static/js/2.971889d8.chunk.js": "/clocktime/static/js/2.971889d8.chunk.js",
-    "static/js/2.971889d8.chunk.js.map": "/clocktime/static/js/2.971889d8.chunk.js.map",
+    "main.css": "/clocktime/static/css/main.1b4ae759.css",
+    "main.js": "/clocktime/static/js/main.665b399c.js",
     "index.html": "/clocktime/index.html",
-    "precache-manifest.e45e7ece33ca2ed2f17072b6629a15b3.js": "/clocktime/precache-manifest.e45e7ece33ca2ed2f17072b6629a15b3.js",
-    "service-worker.js": "/clocktime/service-worker.js",
-    "static/css/main.4157f97a.chunk.css.map": "/clocktime/static/css/main.4157f97a.chunk.css.map",
-    "static/js/2.971889d8.chunk.js.LICENSE.txt": "/clocktime/static/js/2.971889d8.chunk.js.LICENSE.txt"
+    "main.1b4ae759.css.map": "/clocktime/static/css/main.1b4ae759.css.map",
+    "main.665b399c.js.map": "/clocktime/static/js/main.665b399c.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.2c5704bd.js",
-    "static/js/2.971889d8.chunk.js",
-    "static/css/main.4157f97a.chunk.css",
-    "static/js/main.dcb93586.chunk.js"
+    "static/css/main.1b4ae759.css",
+    "static/js/main.665b399c.js"
   ]
 }
