@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/clocktime/build/bundle.080c94a1.js",
+    "main.js": "/clocktime/build/bundle.c557bfb3.js",
     "main.css": "/clocktime/static/css/main.debe5792.css",
     "logo512.png": "/clocktime/logo512.png",
     "android-chrome-512x512.png": "/clocktime/android-chrome-512x512.png",
@@ -23,7 +23,7 @@
     "robots.txt": "/clocktime/robots.txt"
   },
   "entrypoints": [
-    "build/bundle.080c94a1.js",
+    "build/bundle.c557bfb3.js",
     "static/css/main.debe5792.css"
   ]
 }
