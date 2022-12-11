@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [suidPlugin(), solidPlugin()],
   build: {
     target: "esnext",
+    sourcemap: true,
   },
 });
