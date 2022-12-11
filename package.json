@@ -14,24 +14,34 @@
     "@material-ui/core": "4.10.2",
     "@mui/material": "5.10.6",
     "@mui/styles": "5.10.6",
+    "@suid/icons-material": "0.5.2",
+    "@suid/material": "0.8.1",
+    "@suid/vite-plugin": "0.1.0",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
     "@testing-library/user-event": "14.4.3",
+    "babel-preset-solid": "1.6.3",
     "notistack": "2.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-scripts": "5.0.1",
-    "source-map-explorer": "2.5.2"
+    "solid-js": "1.6.4",
+    "source-map-explorer": "2.5.2",
+    "typescript": "4.9.4",
+    "vite": "4.0.0",
+    "vite-plugin-solid": "2.5.0"
   },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
-    "build": "react-scripts build && npm run styleguide:build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "styleguide:build": "styleguidist build",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "eslintConfig": {
     "extends": "react-app"
