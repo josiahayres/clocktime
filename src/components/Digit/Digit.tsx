@@ -128,16 +128,13 @@ export function Digit(props: DigitProps) {
   });
 
   return (
-    <>
-      {props.number}
-      <div class="analog-digit">
-        <Clock config={digit().topLeft} size={props.size} />
-        <Clock config={digit().topRight} size={props.size} />
-        <Clock config={digit().middleLeft} size={props.size} />
-        <Clock config={digit().middleRight} size={props.size} />
-        <Clock config={digit().bottomLeft} size={props.size} />
-        <Clock config={digit().bottomRight} size={props.size} />
-      </div>
-    </>
+    <div class="analog-digit">
+      <Clock config={digit().topLeft} size={props.size} />
+      <Clock config={digit().topRight} size={props.size} />
+      <Clock config={digit().middleLeft} size={props.size} />
+      <Clock config={digit().middleRight} size={props.size} />
+      <Clock config={digit().bottomLeft} size={props.size} />
+      <Clock config={digit().bottomRight} size={props.size} />
+    </div>
   );
 }
