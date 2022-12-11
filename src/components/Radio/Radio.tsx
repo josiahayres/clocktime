@@ -1,6 +1,6 @@
 import "./Radio.css";
 
-type RadioProps = {
+export type RadioProps = {
   onClick: (size: string) => void;
   value: string;
   selected: string;

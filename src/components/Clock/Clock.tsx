@@ -19,15 +19,17 @@ type ClockProps = {
  * @source https://codepen.io/dope/pen/KJYMZz
  * @param {string} size
  */
-export function Clock(props: ClockProps) {
+export const Clock = (props: ClockProps) => {
   let hourHand: HTMLSpanElement | undefined = undefined;
   let minuteHand: HTMLSpanElement | undefined = undefined;
+
+  const [clockClass, setClockClass] = createSignal("wrap");
 
   /**
    * This effect determines what angle to set the hour and minute hands
    */
   createEffect(() => {
-    if (isNaN(props.config.hour) || isNaN(props.config.minute)) return;
+    if (isNaN(props?.config?.hour) || isNaN(props?.config?.minute)) return;
     if (!hourHand || !minuteHand) return;
     const hourInDegrees = props.config.hour * 30;
     const minuteInDegrees = props.config.minute * 6;
@@ -36,8 +38,6 @@ export function Clock(props: ClockProps) {
 
     setClockClass(props.config.visible ? "wrap" : "wrap hidden");
   });
-
-  const [clockClass, setClockClass] = createSignal("wrap");
 
   return (
     <div class={`clock ${props.size}`}>
@@ -48,4 +48,4 @@ export function Clock(props: ClockProps) {
       </div>
     </div>
   );
-}
+};

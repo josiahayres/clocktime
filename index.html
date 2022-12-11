@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="EN-NZ">
   <head>
     <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Clocktime" />
+    <link rel="apple-touch-icon" href="./logo192.png" />
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;1,400;1,600&display=swap"
       rel="stylesheet"
     />
-    <title>Suid App</title>
+    <link rel="manifest" href="./manifest.json" />
+    <title>Clocktime</title>
   </head>
 
   <body>
@@ -16,4 +20,18 @@
     <div id="root"></div>
     <script src="/src/index.tsx" type="module"></script>
   </body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-XD8QQMRPRP"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-XD8QQMRPRP");
+  </script>
 </html>

@@ -25,7 +25,9 @@
     "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,6 +45,15 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "7.20.5",
+    "@storybook/addon-actions": "6.5.14",
+    "@storybook/addon-essentials": "6.5.14",
+    "@storybook/addon-interactions": "6.5.14",
+    "@storybook/addon-links": "6.5.14",
+    "@storybook/builder-vite": "0.2.5",
+    "@storybook/html": "6.5.14",
+    "@storybook/testing-library": "0.0.13",
+    "babel-loader": "8.3.0",
     "gh-pages": "4.0.0",
     "source-map-explorer": "2.5.3"
   }
