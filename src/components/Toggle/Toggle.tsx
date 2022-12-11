@@ -6,20 +6,16 @@ type ToggleProps = {
   checked: boolean;
 };
 
-export const Toggle = ({
-  onClick,
-  label = "",
-  checked = false,
-}: ToggleProps) => {
+export const Toggle = (props: ToggleProps) => {
   return (
     <div class="toggleContainer">
-      <p>{label}</p>
+      <p>{props.label}</p>
       <label class="switch">
         <input
-          title={label}
+          title={props.label}
           type="checkbox"
-          checked={checked}
-          onChange={onClick}
+          checked={props.checked}
+          onChange={props.onClick}
         />
         <span class="slider round"></span>
       </label>

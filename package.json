@@ -9,6 +9,7 @@
   "private": true,
   "homepage": "https://josiahayres.github.io/clocktime/",
   "dependencies": {
+    "@solidjs/router": "0.5.1",
     "@suid/icons-material": "0.5.2",
     "@suid/material": "0.8.1",
     "@suid/vite-plugin": "0.1.0",

@@ -7,23 +7,18 @@ export type RadioProps = {
   label?: string;
 };
 
-export const Radio = ({
-  value = "",
-  selected = "",
-  label,
-  onClick,
-}: RadioProps) => {
+export const Radio = (props: RadioProps) => {
   return (
-    <li id={value} onClick={() => onClick(value)}>
+    <li id={props.value} onClick={() => props.onClick(props.value)}>
       <input
         type="radio"
         name="clocksize"
-        title={label}
-        value={value}
-        checked={selected === value}
-        onChange={() => onClick(value)}
+        title={props.label}
+        value={props.value}
+        checked={props.selected === props.value}
+        onChange={() => props.onClick(props.value)}
       />
-      <label for={value}>{label ?? value}</label>
+      <label for={props.value}>{props.label ?? props.value}</label>
       <div class="check">
         <div class="inside"></div>
       </div>

@@ -1,15 +1,15 @@
 import { createSignal, onCleanup, Show } from "solid-js";
+import { Fade, Slide } from "@suid/material";
 
 import { Digit } from "../components/Digit";
 import { Radio, RadioGroup } from "../components/Radio";
 import { Toggle } from "../components/Toggle";
 import { ColourSelect, ColourSelectGroup } from "../components/ColourSelect";
 
-import { useUrlParamsLocalStorage } from "../hooks/useUrlParamsLocalStorage";
-
 import pkg from "../../package.json";
 
 import "./Clock.css";
+import { createUrlParamSignal } from "../hooks/createUrlParamSignal";
 
 export function Clock() {
   const [hour, setHour] = createSignal(0);
@@ -22,24 +22,21 @@ export function Clock() {
 
   /** Options */
 
-  const [showInfoAlert, setShowInfoAlert] = useUrlParamsLocalStorage(
+  const [showInfoAlert, setShowInfoAlert] = createUrlParamSignal(
     "showInfoAlert",
     true
   );
-  const [is24hr, setIs24hr] = useUrlParamsLocalStorage("is24Hr", false);
-  const [showSeconds, setShowSeconds] = useUrlParamsLocalStorage(
+  const [is24hr, setIs24hr] = createUrlParamSignal("is24Hr", false);
+  const [showSeconds, setShowSeconds] = createUrlParamSignal(
     "showSeconds",
     false
   );
-  const [showDivider, setShowDivider] = useUrlParamsLocalStorage(
+  const [showDivider, setShowDivider] = createUrlParamSignal(
     "showDivider",
     true
   );
-  const [clockSize, setClockSize] = useUrlParamsLocalStorage(
-    "clockSize",
-    "small"
-  );
-  const [backgroundOption, setBackgroundName] = useUrlParamsLocalStorage(
+  const [clockSize, setClockSize] = createUrlParamSignal("clockSize", "small");
+  const [backgroundOption, setBackgroundName] = createUrlParamSignal(
     "backgroundOption",
     "animatedBackgroundOne"
   );
@@ -47,7 +44,7 @@ export function Clock() {
   const timer = setInterval(() => {
     const currentTime = new Date();
     const timer =
-      is24hr || currentTime.getHours() <= 12
+      is24hr() || currentTime.getHours() <= 12
         ? currentTime.getHours()
         : currentTime.getHours() % 12;
     const hourStr = timer.toString().padStart(2, "0");
@@ -70,118 +67,106 @@ export function Clock() {
 
   const closeOptions = () => {
     setOptionsVisible(false);
-    if (!showInfoAlert) return;
+    if (!showInfoAlert()) return;
     const message = "Your preferences are saved between browser reloads!";
     alert(message);
     setShowInfoAlert(false);
   };
 
   const optionsOverlay = (
-    <div class="overlay" onClick={() => closeOptions()}>
-      <div class="optionsContainer" onClick={(e) => e.stopPropagation()}>
-        <h2>Configure</h2>
-        <div class="options">
-          <h3>Display</h3>
-          <Toggle
-            label="Seconds"
-            checked={showSeconds}
-            onClick={() => setShowSeconds(!showSeconds)}
+    <div class="optionsContainer" onClick={(e) => e.stopPropagation()}>
+      <h2>Configure</h2>
+      <div class="options">
+        <h3>Display</h3>
+        <Toggle
+          label="Seconds"
+          checked={showSeconds()}
+          onClick={() => setShowSeconds(!showSeconds())}
+        />
+        <Toggle
+          label="24 hours"
+          checked={is24hr()}
+          onClick={() => setIs24hr(!is24hr())}
+        />
+        <Toggle
+          label="Divider"
+          checked={showDivider()}
+          onClick={() => setShowDivider(!showDivider())}
+        />
+        <h3>Clock size</h3>
+        <RadioGroup>
+          <Radio value="tiny" onClick={setClockSize} selected={clockSize()} />
+          <Radio value="small" onClick={setClockSize} selected={clockSize()} />
+          <Radio
+            value="regular"
+            onClick={(size) => setClockSize(size)}
+            selected={clockSize()}
           />
-          <Toggle
-            label="24 hours"
-            checked={is24hr}
-            onClick={() => setIs24hr(!is24hr)}
+          <Radio
+            value="large"
+            onClick={(size) => setClockSize(size)}
+            selected={clockSize()}
           />
-          <Toggle
-            label="Divider"
-            checked={showDivider}
-            onClick={() => setShowDivider(!showDivider)}
+        </RadioGroup>
+        <h3>Background</h3>
+        <ColourSelectGroup>
+          <ColourSelect
+            value="animatedBackgroundOne"
+            selected={backgroundOption()}
+            onClick={(backgroundName) => setBackgroundName(backgroundName)}
           />
-          <h3>Clock size</h3>
-          <RadioGroup>
-            <Radio
-              value="tiny"
-              // name="clockSize"
-              onClick={setClockSize}
-              selected={clockSize}
-            />
-            <Radio
-              value="small"
-              // name="clockSize"
-              onClick={setClockSize}
-              selected={clockSize}
-            />
-            <Radio
-              value="regular"
-              // name="clockSize"
-              onClick={(size) => setClockSize(size)}
-              selected={clockSize}
-            />
-            <Radio
-              value="large"
-              // name="clockSize"
-              onClick={(size) => setClockSize(size)}
-              selected={clockSize}
-            />
-          </RadioGroup>
-          <h3>Background</h3>
-          <ColourSelectGroup>
-            <ColourSelect
-              value="animatedBackgroundOne"
-              selected={backgroundOption}
-              onClick={(backgroundName) => setBackgroundName(backgroundName)}
-            />
-            <ColourSelect
-              value="animatedBackgroundTwo"
-              selected={backgroundOption}
-              onClick={(backgroundName) => setBackgroundName(backgroundName)}
-            />
+          <ColourSelect
+            value="animatedBackgroundTwo"
+            selected={backgroundOption()}
+            onClick={(backgroundName) => setBackgroundName(backgroundName)}
+          />
 
-            <ColourSelect
-              value="animatedBackgroundThree"
-              selected={backgroundOption}
-              onClick={(backgroundName) => setBackgroundName(backgroundName)}
-            />
-          </ColourSelectGroup>
-          {/* <button
-						onClick={() => {
-							window.localStorage.clear();
-							window.history.pushState(
-								"",
-								"Clocktime",
-								window.location.pathname
-							);
-						}}
-					>
-						Reset to default
-					</button> */}
-        </div>
+          <ColourSelect
+            value="animatedBackgroundThree"
+            selected={backgroundOption()}
+            onClick={(backgroundName) => setBackgroundName(backgroundName)}
+          />
+        </ColourSelectGroup>
+        {/* <button
+          onClick={() => {
+            window.localStorage.clear();
+            window.history.pushState("", "Clocktime", window.location.pathname);
+          }}
+        >
+          Reset to default
+        </button> */}
       </div>
     </div>
   );
-  console.log(minute(), minute2());
   return (
     <>
-      <Show when={optionsVisible()}>{optionsOverlay}</Show>
-      <div class={`app ${backgroundOption}`}>
-        <div class="time">
-          <Digit number={hour} size={clockSize} />
-          <Digit number={hour2} size={clockSize} />
+      <Fade in={optionsVisible()}>
+        <div class="overlay" onClick={() => closeOptions()}>
+          <Slide direction="left" in={optionsVisible()}>
+            {optionsOverlay}
+          </Slide>
         </div>
-        <Show when={showDivider}>
+      </Fade>
+
+      <div class={`app ${backgroundOption()}`}>
+        <div class="time">
+          <Digit number={hour} size={clockSize()} />
+          <Digit number={hour2} size={clockSize()} />
+        </div>
+        <Show when={showDivider()}>
           <div class="divider">:</div>
         </Show>
         <div class="time">
-          <Digit number={minute} size={clockSize} />
-          <Digit number={minute2} size={clockSize} />
+          <Digit number={minute} size={clockSize()} />
+          <Digit number={minute2} size={clockSize()} />
         </div>
-        <Show when={showSeconds}>
-          <Show when={showDivider}>
+        <Show when={showSeconds()}>
+          <Show when={showDivider()}>
             <div class="divider">:</div>
           </Show>
           <div class="time">
-            <Digit number={seconds} size={clockSize} />
-            <Digit number={seconds2} size={clockSize} />
+            <Digit number={seconds} size={clockSize()} />
+            <Digit number={seconds2} size={clockSize()} />
           </div>
         </Show>
         <span>
