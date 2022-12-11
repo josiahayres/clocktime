@@ -1,5 +1,5 @@
 import { createSignal, onCleanup, Show } from "solid-js";
-import { Fade, Slide } from "@suid/material";
+import { Button, Fade, Slide, Stack } from "@suid/material";
 
 import { Digit } from "../components/Digit";
 import { Radio, RadioGroup } from "../components/Radio";
@@ -73,6 +73,17 @@ export function Clock() {
     setShowInfoAlert(false);
   };
 
+  const handleResetClick = () => {
+    window.localStorage.clear();
+    window.history.pushState("", "Clocktime", window.location.pathname);
+    setShowDivider(true);
+    setShowSeconds(false);
+    setShowInfoAlert(true);
+    setIs24hr(false);
+    setBackgroundName("animatedBackgroundOne");
+    setClockSize("small");
+  };
+
   const optionsOverlay = (
     <div class="optionsContainer" onClick={(e) => e.stopPropagation()}>
       <h2>Configure</h2>
@@ -127,14 +138,11 @@ export function Clock() {
             onClick={(backgroundName) => setBackgroundName(backgroundName)}
           />
         </ColourSelectGroup>
-        {/* <button
-          onClick={() => {
-            window.localStorage.clear();
-            window.history.pushState("", "Clocktime", window.location.pathname);
-          }}
-        >
-          Reset to default
-        </button> */}
+        <Stack p={1}>
+          <Button onClick={handleResetClick} variant="text">
+            Reset to default
+          </Button>
+        </Stack>
       </div>
     </div>
   );
@@ -147,7 +155,6 @@ export function Clock() {
           </Slide>
         </div>
       </Fade>
-
       <div class={`app ${backgroundOption()}`}>
         <div class="time">
           <Digit number={hour} size={clockSize()} />

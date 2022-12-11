@@ -5,7 +5,7 @@ import { Clock } from "./pages/Clock";
 
 export default function App() {
   const theme = createTheme({
-    palette: { mode: "dark" },
+    palette: { mode: "light" },
   });
 
   return (
