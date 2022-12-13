@@ -1,195 +1,200 @@
 .app {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 .app,
 .time {
-	display: inline-flex;
+  display: inline-flex;
 }
 
 .app > span {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	font-size: 0.8em;
-	padding: 1em;
-	color: white;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 0.8em;
+  padding: 1em;
+  color: white;
 }
 
 h2 {
-	top: 0em;
-	margin-left: 2rem;
+  top: 0em;
+  margin-left: 2rem;
 }
 h3 {
-	top: 0em;
-	margin-left: 2rem;
+  top: 0em;
+  margin-left: 2rem;
 }
 p {
-	margin-left: 2rem;
+  margin-left: 2rem;
 }
 
 .optionsBtn {
-	cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-style: inherit;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .icon {
-	fill: none;
-	stroke: #212020;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	stroke-width: 3px;
+  fill: none;
+  stroke: #212020;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3px;
 }
 .close {
-	cursor: pointer;
-	width: 30px;
-	display: inline-block;
-	text-align: center;
-	vertical-align: baseline;
-	border-radius: 8px;
-	padding-top: 2px;
-	position: relative;
-	margin-right: 1em;
+  cursor: pointer;
+  width: 30px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: baseline;
+  border-radius: 8px;
+  padding-top: 2px;
+  position: relative;
+  margin-right: 1em;
 }
 
 .close:hover {
-	background: #cc8b8c;
+  background: #cc8b8c;
 }
 .closeButton {
-	background-color: #f1b2f4;
-	width: 100%;
-	height: 50px;
-	border-radius: 10px;
-	border: none;
-	font-size: 1em;
-	color: #383535;
+  background-color: #f1b2f4;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1em;
+  color: #383535;
 }
 
 .closeButton:active {
-	border: solid white 2px;
+  border: solid white 2px;
 }
 
 .closeButton:focus {
-	outline: none;
+  outline: none;
 }
 
 .overlay {
-	position: fixed;
-	width: 100%;
-	height: 100vh;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(1, 1, 1, 0.25);
-	backdrop-filter: blur(4px);
-	z-index: 1000;
-	justify-content: center;
-	align-items: center;
-	display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(1, 1, 1, 0.25);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 .optionsContainer {
-	position: fixed;
-	width: 100%;
-	height: 100vh;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	background-color: #fff;
-	color: #212020;
-	width: 400px;
-	z-index: 1001;
-	cursor: default;
-	overflow-y: scroll;
-	margin-left: auto;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  color: #212020;
+  width: 400px;
+  z-index: 1001;
+  cursor: default;
+  overflow-y: scroll;
+  margin-left: auto;
 }
 
 .options {
-	text-align: left;
+  text-align: left;
 }
 
 .animatedBackgroundOne {
-	background: linear-gradient(
-		334deg,
-		#45524f,
-		#19295d,
-		#2b5d1c,
-		#85530f,
-		#5a537d,
-		#08302a
-	);
-	background-size: 1200% 1200%;
-	-webkit-animation: FadeBackgroundColour 59s ease infinite;
-	-moz-animation: FadeBackgroundColour 59s ease infinite;
-	animation: FadeBackgroundColour 59s ease infinite;
+  background: linear-gradient(
+    334deg,
+    #45524f,
+    #19295d,
+    #2b5d1c,
+    #85530f,
+    #5a537d,
+    #08302a
+  );
+  background-size: 1200% 1200%;
+  -webkit-animation: FadeBackgroundColour 59s ease infinite;
+  -moz-animation: FadeBackgroundColour 59s ease infinite;
+  animation: FadeBackgroundColour 59s ease infinite;
 }
 
 .animatedBackgroundTwo {
-	background: linear-gradient(
-		334deg,
-		#cf2222,
-		#a5512a,
-		#af9818,
-		#0e962b,
-		#2f58b3,
-		#460958
-	);
-	background-size: 1200% 1200%;
-	-webkit-animation: FadeBackgroundColour 59s ease infinite;
-	-moz-animation: FadeBackgroundColour 59s ease infinite;
-	animation: FadeBackgroundColour 59s ease infinite;
+  background: linear-gradient(
+    334deg,
+    #cf2222,
+    #a5512a,
+    #af9818,
+    #0e962b,
+    #2f58b3,
+    #460958
+  );
+  background-size: 1200% 1200%;
+  -webkit-animation: FadeBackgroundColour 59s ease infinite;
+  -moz-animation: FadeBackgroundColour 59s ease infinite;
+  animation: FadeBackgroundColour 59s ease infinite;
 }
 
 .animatedBackgroundThree {
-	background: linear-gradient(
-		334deg,
-		#7f7eff,
-		#a390e4,
-		#c69dd2,
-		#0e962b,
-		#cc8b8c,
-		#cc8b8c
-	);
-	background-size: 1200% 1200%;
-	-webkit-animation: FadeBackgroundColour 59s ease infinite;
-	-moz-animation: FadeBackgroundColour 59s ease infinite;
-	animation: FadeBackgroundColour 59s ease infinite;
+  background: linear-gradient(
+    334deg,
+    #7f7eff,
+    #a390e4,
+    #c69dd2,
+    #0e962b,
+    #cc8b8c,
+    #cc8b8c
+  );
+  background-size: 1200% 1200%;
+  -webkit-animation: FadeBackgroundColour 59s ease infinite;
+  -moz-animation: FadeBackgroundColour 59s ease infinite;
+  animation: FadeBackgroundColour 59s ease infinite;
 }
 
 @-webkit-keyframes FadeBackgroundColour {
-	0% {
-		background-position: 0% 19%;
-	}
-	50% {
-		background-position: 100% 82%;
-	}
-	100% {
-		background-position: 0% 19%;
-	}
+  0% {
+    background-position: 0% 19%;
+  }
+  50% {
+    background-position: 100% 82%;
+  }
+  100% {
+    background-position: 0% 19%;
+  }
 }
 @-moz-keyframes FadeBackgroundColour {
-	0% {
-		background-position: 0% 19%;
-	}
-	50% {
-		background-position: 100% 82%;
-	}
-	100% {
-		background-position: 0% 19%;
-	}
+  0% {
+    background-position: 0% 19%;
+  }
+  50% {
+    background-position: 100% 82%;
+  }
+  100% {
+    background-position: 0% 19%;
+  }
 }
 @keyframes FadeBackgroundColour {
-	0% {
-		background-position: 0% 19%;
-	}
-	50% {
-		background-position: 100% 82%;
-	}
-	100% {
-		background-position: 0% 19%;
-	}
+  0% {
+    background-position: 0% 19%;
+  }
+  50% {
+    background-position: 100% 82%;
+  }
+  100% {
+    background-position: 0% 19%;
+  }
 }
